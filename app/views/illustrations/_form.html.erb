@@ -1,0 +1,18 @@
+<%= form_for(@illustration) do |f| %>
+    <%= f.label :title, "標題" %>
+    <%= f.text_field :title %> </br>
+
+    <%= f.label :content, "描述" %>
+    <%= f.text_area :content %> </br>
+
+    <%= f.label :years, "年份" %>
+    <%= f.text_field :years %> </br>
+
+    <%= f.label :image, "圖片" %>
+    <%= f.text_field :image %> </br>
+
+    <%= f.label :label, "標籤" %>
+    <%= f.text_field :label %> </br>
+
+    <%= f.submit %>
+<% end %>
