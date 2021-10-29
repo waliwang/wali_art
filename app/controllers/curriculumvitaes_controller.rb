@@ -1,4 +1,6 @@
 class CurriculumvitaesController < ApplicationController
+    before_action :find_curriculumvitae, only: [:edit, :update, :destroy]
+
     def index
         @curriculumvitaes = Curriculumvitae.all
     end
@@ -30,9 +32,6 @@ class CurriculumvitaesController < ApplicationController
         end
     end
     
-    def show
-    end
-
 
     def destroy
         @curriculumvitae.destroy if @curriculumvitae
