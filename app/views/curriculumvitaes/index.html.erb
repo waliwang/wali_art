@@ -1,0 +1,31 @@
+<h1>關於我列表</h1>
+
+<%= link_to "新增經歷資料", new_curriculumvitae_path %>
+
+<table>
+    <thead>
+        <tr>
+          <td>姓名</td>
+          <td>教育</td>
+          <td>描述</td>
+          <td>連結</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @curriculumvitaes.each do |curriculumvitae| %>
+        <tr>
+            <td><%= curriculumvitae.name %></td>
+            <td><%= curriculumvitae.education %></td>
+            <td><%= curriculumvitae.description %></td>
+            <td><%= curriculumvitae.url %></td>
+            <td>
+                <%= link_to "編輯", edit_curriculumvitae_path(curriculumvitae) %>
+                <%= link_to "刪除", curriculumvitae_path(curriculumvitae), method: "delete",
+                                                                    data: { confirm: "確認刪除" } %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+

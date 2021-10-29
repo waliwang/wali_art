@@ -1,0 +1,15 @@
+<%= form_for(@curriculumvitaes) do |f| %>
+    <%= f.label :name, "姓名" %>
+    <%= f.text_field :name %> </br>
+
+    <%= f.label :education, "教育" %>
+    <%= f.text_area :education %> </br>
+
+    <%= f.label :description, "描述" %>
+    <%= f.text_area  :description %> </br>
+
+    <%= f.label :url, "連結" %>
+    <%= f.text_field :url%> </br>
+
+    <%= f.submit %>
+<% end %>
