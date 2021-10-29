@@ -1,5 +1,6 @@
 class IllustrationsController < ApplicationController
-    before_action :authenticate_user!
+    before_action :authenticate_user!  # 這個是 devise 提供的方法，先檢查必須登入
+    before_action :authenticate_admin # 再檢查是否有權限
     before_action :find_illustration, only: [:edit, :update, :destroy]
     def index
         @illustrations = Illustration.all
