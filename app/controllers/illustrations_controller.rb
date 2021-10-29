@@ -12,8 +12,10 @@ class IllustrationsController < ApplicationController
         @illustration = Illustration.new(illustration_params)
 
         if @illustration.save
+            #成功
             redirect_to illustrations_path, notice: "新增作品成功！"
         else
+            #失敗
             render :new
         end
     end
@@ -41,7 +43,7 @@ class IllustrationsController < ApplicationController
 
     private
     def illustration_params
-        params.require(:illustration).permit(:name, :description, :years, :label, :image)
+        params.require(:illustration).permit(:title, :content, :years, :label, :image)
     end
 
     def find_illustration
