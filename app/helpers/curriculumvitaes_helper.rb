@@ -1,0 +1,2 @@
+module CurriculumvitaesHelper
+end

@@ -1,0 +1,2 @@
+class CurriculumvitaesController < ApplicationController
+end

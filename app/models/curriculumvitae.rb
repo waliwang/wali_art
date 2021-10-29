@@ -1,0 +1,2 @@
+class Curriculumvitae < ApplicationRecord
+end
