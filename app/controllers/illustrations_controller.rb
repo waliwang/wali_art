@@ -1,4 +1,5 @@
 class IllustrationsController < ApplicationController
+    before_action :authenticate_user!
     before_action :find_illustration, only: [:edit, :update, :destroy]
     def index
         @illustrations = Illustration.all
