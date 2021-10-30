@@ -1,5 +1,5 @@
 class CurriculumvitaesController < ApplicationController
-    before_action :find_curriculumvitae, only: [:edit, :update, :destroy]
+    before_action :find_curriculumvitae, only: [:edit, :update, :destroy, :show]
 
     def index
         @curriculumvitaes = Curriculumvitae.all
@@ -24,8 +24,11 @@ class CurriculumvitaesController < ApplicationController
     def edit
     end
 
+    def show
+    end
+
     def update
-        if @curriculumvitae.update(illustration_params)
+        if @curriculumvitae.update(curriculumvitae_params)
             redirect_to curriculumvitaes_path, notice: "作品資料更新成功！"
         else
             render :edit
