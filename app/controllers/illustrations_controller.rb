@@ -4,6 +4,8 @@ class IllustrationsController < ApplicationController
         @illustrations = Illustration.all
     end
 
+    
+
 
     private
     def find_illustration
