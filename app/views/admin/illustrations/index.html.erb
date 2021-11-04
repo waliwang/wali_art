@@ -21,7 +21,7 @@
             <td><%= illustration.image %></td>
             <td><%= illustration.label %></td>
             <td>
-                <%= link_to "編輯", edit_illustration_path(illustration) %>
+                <%= link_to "編輯", edit_admin_illustration_path(illustration) %>
                 <%= link_to "刪除", illustration_path(illustration), method: "delete",
                                                                     data: { confirm: "確認刪除" } %>
             </td>

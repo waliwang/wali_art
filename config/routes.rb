@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     root  "welcome#index"
   end
 
-  resources :illustrations
+  resources :illustrations, only: [:index, :show] 
   root  "welcome#index"
   resources :curriculumvitaes
 end
