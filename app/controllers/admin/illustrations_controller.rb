@@ -15,7 +15,7 @@ class Admin::IllustrationsController < ApplicationController
 
         if @illustration.save
             #成功
-            redirect_to illustrations_path, notice: "新增作品成功！"
+            redirect_to admin_illustrations_path, notice: "新增作品成功！"
         else
             #失敗
             render :new
@@ -30,7 +30,7 @@ class Admin::IllustrationsController < ApplicationController
 
     def update
         if @illustration.update(illustration_params)
-            redirect_to illustrations_path, notice: "作品資料更新成功！"
+            redirect_to admin_illustrations_path, notice: "作品資料更新成功！"
         else
             render :edit
         end
@@ -42,7 +42,7 @@ class Admin::IllustrationsController < ApplicationController
 
     def destroy
         @illustration.destroy if @illustration
-        redirect_to illustrations_path, notice: "作品資料已刪除！"
+        redirect_to admin_illustrations_path, notice: "作品資料已刪除！"
         # render html: "destroy"
     end
 
