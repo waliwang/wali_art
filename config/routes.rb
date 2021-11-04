@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :illustrations
     resources :users
+    root  "welcome#index"
   end
 
   resources :illustrations
