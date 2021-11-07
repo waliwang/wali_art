@@ -1,0 +1,27 @@
+<h1>作品列表</h1>
+<%= link_to "新增留言", new_contact_path %>
+
+<table>
+    <thead>
+        <tr>
+          <td>姓名</td>
+          <td>email</td>
+          <td>描述</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @contacts.each do |contact| %>
+        <tr>
+            <td><%= contact.name %></td>
+            <td><%= contact.email %></td>
+            <td><%= contact.contect %></td>
+            <td>
+                <%= link_to "編輯", edit_contact_path(contact) %>
+                <%= link_to "刪除", contact_path(contact), method: "delete",
+                                                                    data: { confirm: "確認刪除" } %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
