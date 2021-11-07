@@ -1,0 +1,20 @@
+development:
+  address: "smtp.mailgun.org"
+  port: 587
+  domain: "sugoii.live"
+  authentication: "plain"
+  user_name: "postmaster@sandbox1395d33e0a164f43a8352cdf517de5cd.mailgun.org"
+  # password: ENV["SMTP_API_KEY"]
+  password: '777a25b882859787796aea063df8602f-10eedde5-d2363cfc'
+  enable_starttls_auto: true
+  
+
+production:
+  address: "smtp.mailgun.org"
+  port: 587
+  domain: "sugoii.live"
+  authentication: "plain"
+  user_name: "postmaster@sandbox1395d33e0a164f43a8352cdf517de5cd.mailgun.org"
+  # password: ENV["SMTP_API_KEY"]
+  password: '777a25b882859787796aea063df8602f-10eedde5-d2363cfc'
+  enable_starttls_auto: true
