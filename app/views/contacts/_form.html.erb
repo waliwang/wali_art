@@ -1,0 +1,12 @@
+<%= form_for(contact) do |f| %>
+    <%= f.label :name, "姓名" %>
+    <%= f.text_field :name %> </br>
+
+    <%= f.label :email, "email" %>
+    <%= f.text_field :email %> </br>
+
+    <%= f.label :content, "描述" %>
+    <%= f.text_area :content %> </br>
+
+    <%= f.submit %>
+<% end %>
