@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   resources :illustrations, only: [:index, :show, :create] 
   root  "welcome#index"
   resources :curriculumvitaes, only: [:show]
+
+
+  resources :contacts
 end
