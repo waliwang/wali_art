@@ -9,7 +9,8 @@ class ContactsController < ApplicationController
     def create
         @contact = Contact.new(contact_params) 
         if @contact.save
-            ContactMailer.say_hello_to(@contact).deliver_now
+            # 寄信
+            ContactMailer.say_hello_to(@contact).deliver_later
             redirect_to @contact, notice: '你有一封新留言！'
           else
             render :new
