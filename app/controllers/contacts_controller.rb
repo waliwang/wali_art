@@ -3,7 +3,11 @@ class ContactsController < ApplicationController
         @contacts = Contact.all
     end
     def new
+<<<<<<< HEAD
         @contact = Contact.new
+=======
+        @contacts = Contact.new
+>>>>>>> ff9c47e41fcd8d524ecdba3f0fcd75e298a6ba53
     end
 
     def create
