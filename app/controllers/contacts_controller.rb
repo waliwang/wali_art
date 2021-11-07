@@ -9,7 +9,7 @@ class ContactsController < ApplicationController
     def create
         @contacts = Contact.new
         if @content.save
-            flash,note[:notice] = "Your message was successfully sent!"
+            flash,now[:notice] = "Your message was successfully sent!"
             ContactMailer.notify(@contact).deliver_letter
         else
             flash.now[:notice] = "Your message was fail to sent!"
