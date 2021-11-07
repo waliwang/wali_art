@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
  
 
-  namespace :admin do
+  namespace :admin, path: "djejwmt" do
     resources :illustrations
     resources :users
     root  "welcome#index"
