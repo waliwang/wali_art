@@ -10,7 +10,7 @@ class ContactsController < ApplicationController
         @contact = Contact.new(contact_params) 
         if @contact.save
             # 寄信
-            ContactMailer.say_hello_to(@contact).deliver_later
+            ContactMailer.say_hello_to(@contact).deliver_now
             redirect_to @contact, notice: '你有一封新留言！'
           else
             render :new
@@ -21,6 +21,11 @@ class ContactsController < ApplicationController
     def show
     end
       
+    def destroy
+        @contact.destroy if @contact
+        redirect_to contacts_path, notice: "信件已刪除！"
+        # render html: "destroy"
+    end
   
 
     def contact_params

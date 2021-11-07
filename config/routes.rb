@@ -9,10 +9,11 @@ Rails.application.routes.draw do
     root  "welcome#index"
   end
 
-  resources :illustrations, only: [:index, :show, :create] 
+  resources :illustrations, only: [:index, :show, :create, :update] 
   root  "welcome#index"
   resources :curriculumvitaes, only: [:show]
 
 
-  resources :contacts
+  resources :contacts, only: [:new, :create]
+  root  "welcome#index"
 end
