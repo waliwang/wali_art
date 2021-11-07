@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   namespace :admin, path: "djejwmt" do
     resources :illustrations
     resources :users
-    root  "welcome#index"
   end
 
   resources :illustrations, only: [:index, :show, :create, :update] 
@@ -15,5 +14,4 @@ Rails.application.routes.draw do
 
 
   resources :contacts, only: [:new, :create]
-  root  "welcome#index"
 end

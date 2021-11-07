@@ -3,6 +3,7 @@ class ContactMailer < ApplicationMailer
 
     def say_hello_to(contact)
         @contact = contact
-        mail to:@contact.email, subject:"你好！"
+        @abc = "123"
+        mail to: "larts393@gmail.com", subject: "你好！"
     end
 end

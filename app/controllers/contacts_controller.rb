@@ -11,7 +11,7 @@ class ContactsController < ApplicationController
         if @contact.save
             # 寄信
             ContactMailer.say_hello_to(@contact).deliver_now
-            redirect_to @contact, notice: '你有一封新留言！'
+            redirect_to root_path, notice: '你有一封新留言！'
           else
             render :new
           end
