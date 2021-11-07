@@ -7,13 +7,14 @@ class ContactsController < ApplicationController
     end
 
     def create
-        @contacts = Contact.new
-        if @content.save
-            flash,now[:notice] = "Your message was successfully sent!"
-            ContactMailer.notify(@contact).deliver_letter
-        else
+        @contact = Contact.new(contact_params) 
+        if @contact.save
+            flash.now[:notice] = "Your message was successfully sent!"
+            ContactMailer.notify(@contact).deliver_later
+          else
             flash.now[:notice] = "Your message was fail to sent!"
-        end
+          end
+      
     end
 
     def contact_params
