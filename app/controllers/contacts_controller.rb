@@ -9,13 +9,18 @@ class ContactsController < ApplicationController
     def create
         @contact = Contact.new(contact_params) 
         if @contact.save
-            flash.now[:notice] = "Your message was successfully sent!"
-            ContactMailer.notify(@contact).deliver_later
+            ContactMailer.say_hello_to(@contact).deliver_now
+            redirect_to @contact, notice: '你有一封新留言！'
           else
-            flash.now[:notice] = "Your message was fail to sent!"
+            render :new
           end
-      
+
     end
+
+    def show
+    end
+      
+  
 
     def contact_params
         params.require(:contact).permit(:name, :email, :content)
