@@ -1,10 +1,13 @@
 class ContactsController < ApplicationController
+    def index
+        @contacts = Contact.all
+    end
     def new
-        @contact = Contact.new
+        @contacts = Contact.new
     end
 
     def create
-        @contact = Contact.new
+        @contacts = Contact.new
         if @content.save
             flash,note[:notice] = "Your message was successfully sent!"
             ContactMailer.notify(@contact).deliver_letter
